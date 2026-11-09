@@ -7,174 +7,199 @@
   <meta name="description" content="Muhammadyusuf — HTML, CSS va JavaScript bilan veb-sahifalar yaratadigan boshlang'ich frontend dasturchi.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Sahifa ko'rinishidan oldin tanlangan mavzuni qo'yadi (miltillamasligi uchun)
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); } catch (e) {}
+  </script>
 </head>
 <body>
 
   <header class="site-header">
     <a class="logo" href="#top">Muhammadyusuf</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
-      <span class="bars" aria-hidden="true"></span>
-      <span>Menyu</span>
+      <span class="bars" aria-hidden="true"></span><span data-i18n="menu">Menyu</span>
     </button>
-    <nav id="menu" aria-label="Asosiy menyu">
+    <nav id="menu" aria-label="Menu">
       <ul>
-        <li><a href="#haqida">Men haqimda</a></li>
-        <li><a href="#skills">Ko'nikmalar</a></li>
-        <li><a href="#loyihalar">Loyihalar</a></li>
-        <li><a href="#aloqa">Aloqa</a></li>
+        <li><a href="#haqida" data-i18n="nAbout">Men haqimda</a></li>
+        <li><a href="#skills" data-i18n="nSkills">Ko'nikmalar</a></li>
+        <li><a href="#loyihalar" data-i18n="nProj">Loyihalar</a></li>
+        <li><a href="#aloqa" data-i18n="nContact">Aloqa</a></li>
       </ul>
+      <!-- Til va mavzu: kompyuterda menyuda, telefonda menyu tugmasi ichida -->
+      <div class="tools">
+        <button type="button" class="lang" data-lang="uz" aria-pressed="true">UZ</button>
+        <button type="button" class="lang" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="lang" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" class="theme-btn" aria-label="Light / Dark">☾</button>
+      </div>
     </nav>
   </header>
 
   <main id="top">
 
-    <!-- 1. HERO -->
-    <section class="hero wrap">
+    <section class="hero">
       <div class="hero-text">
-        <p class="hero-place">Andijon, O'zbekiston</p>
-        <h1>Men veb-sahifalarni qo'lda, qator-qator yozaman.</h1>
-        <p class="lead">Men Muhammadyusuf — frontend dasturchiman. HTML, CSS va JavaScript o'rganib, haqiqiy loyihalar qilyapman.</p>
+        <p class="hero-place" data-i18n="place">Andijon, O'zbekiston</p>
+        <h1 data-i18n="h1">Men veb-sahifalarni qo'lda, qator-qator yozaman.</h1>
+        <p class="lead" data-i18n="lead">Men Muhammadyusuf — frontend dasturchiman. HTML, CSS va JavaScript o'rganib, haqiqiy loyihalar qilyapman.</p>
+        <ul class="chips" aria-label="Tech stack"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Git</li><li>Responsive</li></ul>
         <div class="hero-actions">
-          <a class="btn" href="#loyihalar">Loyihalarimni ko'rish</a>
-          <a class="btn ghost" href="#aloqa">Menga yozish</a>
+          <a class="btn" href="#loyihalar" data-i18n="btnProj">Loyihalarimni ko'rish</a>
+          <a class="btn ghost" href="#aloqa" data-i18n="btnWrite">Menga yozish</a>
+        </div>
+        <div class="code-window">
+          <div class="code-bar"><span></span><span></span><span></span><em>style.css</em></div>
+<pre><code><b class="c-sel">:root</b> {
+  <b class="c-prop">--accent</b>: <b class="c-val" id="accent-code">#c8402a</b>;
+}</code></pre>
+          <div class="swatches" role="group">
+            <span data-i18n="pick">Rangni tanlang:</span>
+            <button type="button" data-color="#c8402a" style="background:#c8402a" aria-label="Red" aria-pressed="true"></button>
+            <button type="button" data-color="#2b50a8" style="background:#2b50a8" aria-label="Blue" aria-pressed="false"></button>
+            <button type="button" data-color="#2f7a56" style="background:#2f7a56" aria-label="Green" aria-pressed="false"></button>
+            <button type="button" data-color="#7a3fb0" style="background:#7a3fb0" aria-label="Purple" aria-pressed="false"></button>
+          </div>
         </div>
       </div>
 
-      <div class="hero-visual">
-      <!-- Jonli kod oynasi: rangni bosing, butun sahifa rangi o'zgaradi -->
-      <div class="code-window">
-        <div class="code-bar"><span></span><span></span><span></span><em>style.css</em></div>
-<pre><code><b class="c-sel">:root</b> {
-  <b class="c-prop">--accent</b>: <b class="c-val" id="accent-code">#5b3df5</b>;
-}</code></pre>
-        <div class="swatches" role="group" aria-label="Sahifa rangini tanlang">
-          <span>Rangni tanlang:</span>
-          <button type="button" data-color="#5b3df5" style="background:#5b3df5" aria-label="Binafsha" aria-pressed="true"></button>
-          <button type="button" data-color="#0a7d5a" style="background:#0a7d5a" aria-label="Yashil" aria-pressed="false"></button>
-          <button type="button" data-color="#d9480f" style="background:#d9480f" aria-label="To'q sariq" aria-pressed="false"></button>
-          <button type="button" data-color="#1c5fe0" style="background:#1c5fe0" aria-label="Ko'k" aria-pressed="false"></button>
-        </div>
-      </div>
-      </div>
+      <figure class="hero-photo">
+        <img src="photo.jpg" width="900" height="1187" alt="Muhammadyusuf portreti">
+        <figcaption>Muhammadyusuf</figcaption>
+      </figure>
     </section>
 
-    <!-- 2. MEN HAQIMDA -->
     <section class="section wrap" id="haqida">
-      <h2>Men haqimda</h2>
+      <h2 data-i18n="nAbout">Men haqimda</h2>
       <div class="about">
         <div>
-          <p>Men endigina frontend yo'lini boshladim. Menga sahifa ochilganda ko'rinadigan narsani o'zim yasash yoqadi: tugma, menyu, kartochka — hammasi koddan paydo bo'ladi.</p>
-          <p>Hozir tozaroq HTML yozishni, CSS bilan tartibli maket qilishni va JavaScript bilan sahifani jonlantirishni o'rganyapman. Maqsadim — o'z loyihalarim bilan ishga kirish.</p>
+          <p data-i18n="p1">Men endigina frontend yo'lini boshladim. Menga sahifa ochilganda ko'rinadigan narsani o'zim yasash yoqadi: tugma, menyu, kartochka — hammasi koddan paydo bo'ladi.</p>
+          <p data-i18n="p2">Hozir tozaroq HTML yozishni, CSS bilan tartibli maket qilishni va JavaScript bilan sahifani jonlantirishni o'rganyapman. Maqsadim — o'z loyihalarim bilan ishga kirish.</p>
         </div>
         <ul class="facts">
-          <li><span>Shahar</span><strong>Andijon</strong></li>
-          <li><span>Yo'nalish</span><strong>Frontend</strong></li>
-          <li><span>Texnologiyalar</span><strong>HTML, CSS, JavaScript</strong></li>
-          <li><span>Hozir</span><strong>Har kuni o'rganyapman</strong></li>
+          <li><span data-i18n="fCity">Shahar</span><strong data-i18n="vCity">Andijon</strong></li>
+          <li><span data-i18n="fDir">Yo'nalish</span><strong>Frontend</strong></li>
+          <li><span data-i18n="fTech">Texnologiyalar</span><strong>HTML, CSS, JavaScript</strong></li>
+          <li><span data-i18n="fNow">Hozir</span><strong data-i18n="vNow">Har kuni o'rganyapman</strong></li>
         </ul>
       </div>
     </section>
 
-    <!-- 3. KO'NIKMALAR -->
     <section class="section wrap" id="skills">
-      <h2>Ko'nikmalar</h2>
+      <h2 data-i18n="nSkills">Ko'nikmalar</h2>
       <ul class="skills">
-        <li>
-          <h3>HTML</h3>
-          <p>Sahifa tuzilishi, sarlavhalar, ro'yxatlar, havolalar, rasmlar va formalar.</p>
-        </li>
-        <li>
-          <h3>CSS</h3>
-          <p>Flexbox, grid, ranglar, shriftlar va telefon uchun moslashuvchan dizayn.</p>
-        </li>
-        <li>
-          <h3>JavaScript</h3>
-          <p>Asoslarni o'rganyapman: o'zgaruvchilar, funksiyalar va sahifa bilan ishlash.</p>
-        </li>
+        <li><h3>HTML</h3><p data-i18n="s1">Sahifa tuzilishi, sarlavhalar, ro'yxatlar, havolalar, rasmlar va formalar.</p></li>
+        <li><h3>CSS</h3><p data-i18n="s2">Flexbox, grid, ranglar, shriftlar va telefon uchun moslashuvchan dizayn.</p></li>
+        <li><h3>JavaScript</h3><p data-i18n="s3">Asoslarni o'rganyapman: o'zgaruvchilar, funksiyalar va sahifa bilan ishlash.</p></li>
       </ul>
     </section>
 
-    <!-- 4. LOYIHALAR -->
     <section class="section wrap" id="loyihalar">
-      <h2>Loyihalar</h2>
+      <h2 data-i18n="nProj">Loyihalar</h2>
       <div class="projects">
-
-        <!-- Yangi loyiha qo'shish uchun shu <article> blokini nusxalang -->
         <article class="project">
           <div class="project-thumb thumb-1" aria-hidden="true"></div>
           <h3>Ovqatchi</h3>
-          <p>Andijon uchun ovqat yetkazib berish ilovasi: buyurtma berish va telefonda ishlaydigan interfeys.</p>
+          <p data-i18n="p1d">Andijon uchun ovqat yetkazib berish ilovasi: buyurtma berish va telefonda ishlaydigan interfeys.</p>
           <p class="tags">HTML, CSS, JavaScript, Node.js</p>
-          <a href="#">Ko'rish</a>
+          <a href="#" data-i18n="view">Ko'rish</a>
         </article>
-
         <article class="project">
           <div class="project-thumb thumb-2" aria-hidden="true"></div>
-          <h3>O'quv konsalting sayti</h3>
-          <p>Ta'lim bo'yicha maslahat xizmati uchun veb-sayt: xizmatlar, ma'lumot va aloqa bo'limlari.</p>
+          <h3 data-i18n="p2t">O'quv konsalting sayti</h3>
+          <p data-i18n="p2d">Ta'lim bo'yicha maslahat xizmati uchun veb-sayt: xizmatlar, ma'lumot va aloqa bo'limlari.</p>
           <p class="tags">HTML, CSS, JavaScript</p>
-          <a href="#">Ko'rish</a>
+          <a href="https://yolchiconsalting.consalting.workers.dev" data-i18n="view">Ko'rish</a>
         </article>
-
-        <article class="project">
-          <div class="project-thumb thumb-3" aria-hidden="true"></div>
-          <h3>Loyiha nomi 3</h3>
-          <p>Bu yerga loyiha haqida 1–2 gap yozing: nima qiladi va qaysi texnologiyalar bilan yasalgan.</p>
-          <p class="tags">HTML, CSS</p>
-          <a href="#">Ko'rish</a>
-        </article>
-
       </div>
     </section>
 
-    <!-- 5. ALOQA -->
     <section class="section wrap" id="aloqa">
       <div class="contact-box">
-        <h2>Aloqa</h2>
-        <p>Loyiha yoki hamkorlik bo'yicha yozing — javob beraman.</p>
+        <h2 data-i18n="nContact">Aloqa</h2>
+        <p data-i18n="cP">Loyiha yoki hamkorlik bo'yicha yozing — javob beraman.</p>
         <ul class="contact-list">
-          <li><a href="mailto:sizning@email.com">sizning@email.com</a></li>
-          <li><a href="https://t.me/sizning_username">Telegram: @sizning_username</a></li>
-          <li><a href="https://github.com/sizning-username">GitHub: sizning-username</a></li>
+          <li><a href="muhammadyusufxuribekov97@email.com">EMAIL</a></li>
+          <li><a href="https://t.me/xuribekov_m">Telegram</a></li>
+          <li><a href="https://github.com/XURIBEKOV">GitHub: XURIBEKOV</a></li>
         </ul>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Muhammadyusuf. HTML, CSS va ozgina JavaScript bilan yaratilgan.</p>
-  </footer>
+  <footer class="site-footer"><p data-i18n="foot">© 2026 Mukhammadyusuf. </p></footer>
 
   <script>
-    // Telefondagi menyu tugmasi: havolalarni ochadi va yopadi
+    // ===== Tarjimalar: [inglizcha, ruscha]. O'zbekcha matn HTML'ning o'zida turibdi =====
+    const T = {
+      title: ["Muhammadyusuf — Frontend developer", "Мухаммадюсуф — Frontend-разработчик"],
+      menu: ["Menu", "Меню"], nAbout: ["About me", "Обо мне"], nSkills: ["Skills", "Навыки"],
+      nProj: ["Projects", "Проекты"], nContact: ["Contact", "Контакты"],
+      place: ["Andijan, Uzbekistan", "Андижан, Узбекистан"],
+      h1: ["I write web pages by hand, line by line.", "Я пишу веб-страницы вручную, строка за строкой."],
+      lead: ["I'm Muhammadyusuf, a frontend developer. I'm learning HTML, CSS and JavaScript and building real projects.", "Я Мухаммадюсуф, frontend-разработчик. Изучаю HTML, CSS и JavaScript и делаю настоящие проекты."],
+      btnProj: ["View my projects", "Смотреть проекты"], btnWrite: ["Write to me", "Написать мне"],
+      pick: ["Pick a color:", "Выберите цвет:"],
+      p1: ["I've just started my frontend journey. I enjoy building what appears when a page opens: a button, a menu, a card — it all comes to life from code.", "Я только начал путь во frontend. Мне нравится создавать то, что видно при открытии страницы: кнопку, меню, карточку — всё рождается из кода."],
+      p2: ["Right now I'm learning cleaner HTML, tidy layouts with CSS and bringing pages to life with JavaScript. My goal is to get a job with my own projects.", "Сейчас я изучаю более чистый HTML, аккуратную вёрстку на CSS и оживляю страницы с помощью JavaScript. Моя цель — устроиться на работу с собственными проектами."],
+      fCity: ["City", "Город"], vCity: ["Andijan", "Андижан"], fDir: ["Focus", "Направление"],
+      fTech: ["Technologies", "Технологии"], fNow: ["Now", "Сейчас"], vNow: ["Learning every day", "Учусь каждый день"],
+      s1: ["Page structure, headings, lists, links, images and forms.", "Структура страницы, заголовки, списки, ссылки, изображения и формы."],
+      s2: ["Flexbox, grid, colors, fonts and responsive design for phones.", "Flexbox, grid, цвета, шрифты и адаптивный дизайн для телефонов."],
+      s3: ["Learning the basics: variables, functions and working with the page.", "Изучаю основы: переменные, функции и работу со страницей."],
+      p1d: ["A food delivery app for Andijan: ordering and a phone-friendly interface.", "Приложение доставки еды для Андижана: заказы и интерфейс для телефона."],
+      p2t: ["Study consulting website", "Сайт образовательного консалтинга"],
+      p2d: ["A website for an education consulting service: services, information and contact sections.", "Сайт консалтинговой услуги в сфере образования: услуги, информация и контакты."],
+      view: ["View", "Смотреть"],
+      cP: ["Write to me about a project or collaboration — I'll reply.", "Пишите по поводу проекта или сотрудничества — отвечу."],
+      foot: ["© 2026 Muhammadyusuf", "© 2026 Muhammadyusuf"]
+    };
+
+    const root = document.documentElement;
+    const texts = document.querySelectorAll("[data-i18n]");
+    const langBtns = document.querySelectorAll(".lang");
+    const uzTitle = document.title;
+    texts.forEach(function (el) { el.dataset.uz = el.textContent; });
+
+    function setLang(lang) {
+      const i = lang === "en" ? 0 : 1;
+      texts.forEach(function (el) { el.textContent = lang === "uz" ? el.dataset.uz : T[el.dataset.i18n][i]; });
+      document.title = lang === "uz" ? uzTitle : T.title[i];
+      root.lang = lang;
+      langBtns.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.lang === lang); });
+      try { localStorage.setItem("lang", lang); } catch (e) {}
+    }
+    langBtns.forEach(function (b) { b.addEventListener("click", function () { setLang(b.dataset.lang); }); });
+    try { const saved = localStorage.getItem("lang"); if (saved && saved !== "uz") setLang(saved); } catch (e) {}
+
+    // ===== Mavzu: yorug' / qorong'i =====
+    const themeBtn = document.querySelector(".theme-btn");
+    function showTheme() { themeBtn.textContent = root.dataset.theme === "dark" ? "☀" : "☾"; }
+    themeBtn.addEventListener("click", function () {
+      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+      showTheme();
+    });
+    showTheme();
+
+    // ===== Telefondagi menyu tugmasi =====
     const menuBtn = document.querySelector(".menu-btn");
     const menu = document.getElementById("menu");
-
-    function setMenu(open) {
-      menu.classList.toggle("open", open);
-      menuBtn.setAttribute("aria-expanded", open);
-    }
-
-    menuBtn.addEventListener("click", function () {
-      setMenu(!menu.classList.contains("open"));
-    });
-    // Havola bosilganda yoki Esc bosilganda menyu yopiladi
+    function setMenu(open) { menu.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", open); }
+    menuBtn.addEventListener("click", function () { setMenu(!menu.classList.contains("open")); });
     menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
 
-    // Rang tugmalari: --accent o'zgaruvchisini almashtiradi
-    const buttons = document.querySelectorAll(".swatches button");
-    const codeText = document.getElementById("accent-code");
-
-    buttons.forEach(function (btn) {
+    // ===== Rang tugmalari =====
+    const swatches = document.querySelectorAll(".swatches button");
+    swatches.forEach(function (btn) {
       btn.addEventListener("click", function () {
-        const color = btn.dataset.color;
-        document.documentElement.style.setProperty("--accent", color);
-        codeText.textContent = color;
-        buttons.forEach(function (b) { b.setAttribute("aria-pressed", b === btn); });
+        root.style.setProperty("--accent", btn.dataset.color);
+        document.getElementById("accent-code").textContent = btn.dataset.color;
+        swatches.forEach(function (b) { b.setAttribute("aria-pressed", b === btn); });
       });
     });
   </script>
