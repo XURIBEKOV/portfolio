@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammadyusuf — Frontend dasturchi</title>
+  <meta name="description" content="Muhammadyusuf — HTML, CSS va JavaScript bilan veb-sahifalar yaratadigan boshlang'ich frontend dasturchi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="#top">Muhammadyusuf</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="bars" aria-hidden="true"></span>
+      <span>Menyu</span>
+    </button>
+    <nav id="menu" aria-label="Asosiy menyu">
+      <ul>
+        <li><a href="#haqida">Men haqimda</a></li>
+        <li><a href="#skills">Ko'nikmalar</a></li>
+        <li><a href="#loyihalar">Loyihalar</a></li>
+        <li><a href="#aloqa">Aloqa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- 1. HERO -->
+    <section class="hero wrap">
+      <div class="hero-text">
+        <p class="hero-place">Andijon, O'zbekiston</p>
+        <h1>Men veb-sahifalarni qo'lda, qator-qator yozaman.</h1>
+        <p class="lead">Men Muhammadyusuf — frontend dasturchiman. HTML, CSS va JavaScript o'rganib, haqiqiy loyihalar qilyapman.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#loyihalar">Loyihalarimni ko'rish</a>
+          <a class="btn ghost" href="#aloqa">Menga yozish</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+      <!-- Jonli kod oynasi: rangni bosing, butun sahifa rangi o'zgaradi -->
+      <div class="code-window">
+        <div class="code-bar"><span></span><span></span><span></span><em>style.css</em></div>
+<pre><code><b class="c-sel">:root</b> {
+  <b class="c-prop">--accent</b>: <b class="c-val" id="accent-code">#5b3df5</b>;
+}</code></pre>
+        <div class="swatches" role="group" aria-label="Sahifa rangini tanlang">
+          <span>Rangni tanlang:</span>
+          <button type="button" data-color="#5b3df5" style="background:#5b3df5" aria-label="Binafsha" aria-pressed="true"></button>
+          <button type="button" data-color="#0a7d5a" style="background:#0a7d5a" aria-label="Yashil" aria-pressed="false"></button>
+          <button type="button" data-color="#d9480f" style="background:#d9480f" aria-label="To'q sariq" aria-pressed="false"></button>
+          <button type="button" data-color="#1c5fe0" style="background:#1c5fe0" aria-label="Ko'k" aria-pressed="false"></button>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- 2. MEN HAQIMDA -->
+    <section class="section wrap" id="haqida">
+      <h2>Men haqimda</h2>
+      <div class="about">
+        <div>
+          <p>Men endigina frontend yo'lini boshladim. Menga sahifa ochilganda ko'rinadigan narsani o'zim yasash yoqadi: tugma, menyu, kartochka — hammasi koddan paydo bo'ladi.</p>
+          <p>Hozir tozaroq HTML yozishni, CSS bilan tartibli maket qilishni va JavaScript bilan sahifani jonlantirishni o'rganyapman. Maqsadim — o'z loyihalarim bilan ishga kirish.</p>
+        </div>
+        <ul class="facts">
+          <li><span>Shahar</span><strong>Andijon</strong></li>
+          <li><span>Yo'nalish</span><strong>Frontend</strong></li>
+          <li><span>Texnologiyalar</span><strong>HTML, CSS, JavaScript</strong></li>
+          <li><span>Hozir</span><strong>Har kuni o'rganyapman</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. KO'NIKMALAR -->
+    <section class="section wrap" id="skills">
+      <h2>Ko'nikmalar</h2>
+      <ul class="skills">
+        <li>
+          <h3>HTML</h3>
+          <p>Sahifa tuzilishi, sarlavhalar, ro'yxatlar, havolalar, rasmlar va formalar.</p>
+        </li>
+        <li>
+          <h3>CSS</h3>
+          <p>Flexbox, grid, ranglar, shriftlar va telefon uchun moslashuvchan dizayn.</p>
+        </li>
+        <li>
+          <h3>JavaScript</h3>
+          <p>Asoslarni o'rganyapman: o'zgaruvchilar, funksiyalar va sahifa bilan ishlash.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4. LOYIHALAR -->
+    <section class="section wrap" id="loyihalar">
+      <h2>Loyihalar</h2>
+      <div class="projects">
+
+        <!-- Yangi loyiha qo'shish uchun shu <article> blokini nusxalang -->
+        <article class="project">
+          <div class="project-thumb thumb-1" aria-hidden="true"></div>
+          <h3>Ovqatchi</h3>
+          <p>Andijon uchun ovqat yetkazib berish ilovasi: buyurtma berish va telefonda ishlaydigan interfeys.</p>
+          <p class="tags">HTML, CSS, JavaScript, Node.js</p>
+          <a href="#">Ko'rish</a>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb thumb-2" aria-hidden="true"></div>
+          <h3>O'quv konsalting sayti</h3>
+          <p>Ta'lim bo'yicha maslahat xizmati uchun veb-sayt: xizmatlar, ma'lumot va aloqa bo'limlari.</p>
+          <p class="tags">HTML, CSS, JavaScript</p>
+          <a href="#">Ko'rish</a>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb thumb-3" aria-hidden="true"></div>
+          <h3>Loyiha nomi 3</h3>
+          <p>Bu yerga loyiha haqida 1–2 gap yozing: nima qiladi va qaysi texnologiyalar bilan yasalgan.</p>
+          <p class="tags">HTML, CSS</p>
+          <a href="#">Ko'rish</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 5. ALOQA -->
+    <section class="section wrap" id="aloqa">
+      <div class="contact-box">
+        <h2>Aloqa</h2>
+        <p>Loyiha yoki hamkorlik bo'yicha yozing — javob beraman.</p>
+        <ul class="contact-list">
+          <li><a href="mailto:sizning@email.com">sizning@email.com</a></li>
+          <li><a href="https://t.me/sizning_username">Telegram: @sizning_username</a></li>
+          <li><a href="https://github.com/sizning-username">GitHub: sizning-username</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Muhammadyusuf. HTML, CSS va ozgina JavaScript bilan yaratilgan.</p>
+  </footer>
+
+  <script>
+    // Telefondagi menyu tugmasi: havolalarni ochadi va yopadi
+    const menuBtn = document.querySelector(".menu-btn");
+    const menu = document.getElementById("menu");
+
+    function setMenu(open) {
+      menu.classList.toggle("open", open);
+      menuBtn.setAttribute("aria-expanded", open);
+    }
+
+    menuBtn.addEventListener("click", function () {
+      setMenu(!menu.classList.contains("open"));
+    });
+    // Havola bosilganda yoki Esc bosilganda menyu yopiladi
+    menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+    // Rang tugmalari: --accent o'zgaruvchisini almashtiradi
+    const buttons = document.querySelectorAll(".swatches button");
+    const codeText = document.getElementById("accent-code");
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const color = btn.dataset.color;
+        document.documentElement.style.setProperty("--accent", color);
+        codeText.textContent = color;
+        buttons.forEach(function (b) { b.setAttribute("aria-pressed", b === btn); });
+      });
+    });
+  </script>
+
+</body>
+</html>
